@@ -21,4 +21,6 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run bot
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: python main.py
