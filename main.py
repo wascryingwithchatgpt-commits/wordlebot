@@ -1,7 +1,7 @@
 import requests
 import datetime
 
-WEBHOOK_URL = "WEBHOOK_URL"
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 today = datetime.date.today()
 
