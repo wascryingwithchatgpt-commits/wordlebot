@@ -9,9 +9,7 @@ today = datetime.date.today()
 url = f"https://www.nytimes.com/svc/wordle/v2/{today:%Y-%m-%d}.json"
 data = requests.get(url).json()
 
-print("DEBUG API RESPONSE:", data)  # important
-
-wordle_number = data["id"]
+wordle_number = data["days_since_launch"]
 answer = data["solution"]
 
 message = {
