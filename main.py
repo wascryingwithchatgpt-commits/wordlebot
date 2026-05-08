@@ -6,14 +6,10 @@ WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 today = datetime.date.today()
 
-# Wordle started on 2021-06-19
-start_date = datetime.date(2021, 6, 19)
-
-wordle_number = (today - start_date).days + 1
-
 url = f"https://www.nytimes.com/svc/wordle/v2/{today:%Y-%m-%d}.json"
 data = requests.get(url).json()
 
+wordle_number = data["id"]
 answer = data["solution"]
 
 message = {
